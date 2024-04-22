@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Photo Share</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Color theme */
+    :root {
+      --primary-color: #3498db;
+      --text-color: #333;
+    }
+
+    /* Global styles */
+    body {
+      font-family: Arial, sans-serif;
+      color: var(--text-color);
+    }
+
+    /* Photo styles */ 
+    .photo {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* Like button styles */
+    .like {
+      background: none;
+      border: none;
+      color: var(--primary-color);
+    }
+
+    .like:hover,
+    .like.liked {
+      color: red; 
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Photo Share</h1>
+    <img src="logo.png" alt="Photo Share Logo">
+  </header>
+
+  <main>
+    <div class="photo">
+      <img src="photo1.jpg" alt="Shared Photo">
+
+      <div class="interactions">
+        <button class="like">
+          <span class="fa fa-heart" aria-hidden="true"></span>
+          <span class="like-count">0 Likes</span>
+        </button>
+
+        <form class="comment-form">
+          <label for="comment">Comment:</label>
+          <textarea id="comment" name="comment"></textarea>  
+          <button type="submit">Comment</button>
+        </form>
+
+        <div class="comments">
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Photo Share</p>
+    <a href="#">Twitter</a>
+    <a href="#">Instagram</a> 
+  </footer>
+
+  <script>
+     // Like button handler
+    const likeBtn = document.querySelector('.like');
+    likeBtn.addEventListener('click', e => {
+      e.target.classList.toggle('liked');
+    });
+
+    // Comment submission handler  
+    const form = document.querySelector('.comment-form');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      // Add comment
+    });
+  </script>
+</body>
+</html>
